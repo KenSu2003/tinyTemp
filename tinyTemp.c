@@ -3,8 +3,6 @@
 #define NUMSAMPLES 25  // #ADC Samples to average
 #define VREF 1.1        // ADC reference voltage
 
-// const char Message1[] PROGMEM = "TEMP:";
-// const char message[] PROGMEM = "POWER ON";
 const char mV[] PROGMEM = "mV";
 const char dot[] PROGMEM = ".";
 const char fahr[] PROGMEM = " Deg F ";
@@ -15,46 +13,6 @@ const char toohot[] PROGMEM = "TOO HOT!!!";
 
 const int TEMP_TOO_HOT = 70;
 const int DISPLAY_TIME = 3000;  // 3 seconds
-
-// int main(void)
-// {
-//     float tempC, tempF, analogVoltage;
-//     unsigned int digitalValue, temp;
-//     unsigned long int totalValue; 
-//     char buffer[3];
-//     int sleep = 0;
-
-//     adc_init();
-//     OLED_init();
-//     OLED_clear();
-    
-//     while(!sleep){
-//         // Acquire & average NUMSAMPLES temp measurements
-//         totalValue = 0;
-//         for (int i = 0; i < NUMSAMPLES; i++)
-//             totalValue += get_adc(); // Get a sample from temp sensor
-//         digitalValue = totalValue / NUMSAMPLES;
-        
-//         // Convert to temp & analog voltage in mV
-//         tempC = digitalValue * 1.0 * VREF / 10.24 - 50.; 
-//         tempF = tempC * (9. / 5.) + 32.;
-//         analogVoltage = digitalValue * 1.0 * VREF / 1024; 
-//         analogVoltage = analogVoltage * 1000;
-    
-//         // Display temperatures
-//         display_temp(tempF, 0);
-//         _delay_ms(1500);
-//         OLED_clear();
-//         display_temp(tempC, 1);
-//         _delay_ms(1500);
-
-//         // Set tinyTemp back to sleep
-//         sleep = 1;
-//     }
-//     OLED_clear();
-//     _delay_ms(8000);
-//     sleep = 0;
-// }
 
 
 int main(void){
@@ -70,9 +28,9 @@ int main(void){
     OLED_clear();
     
     // Test Sleep 
-    OLED_printP(poweron);
-    _delay_ms(1000);
-    OLED_clear();
+    // OLED_printP(poweron);
+    // _delay_ms(1000);
+    // OLED_clear();
 
     // Acquire & average NUMSAMPLES temp measurements
     totalValue = 0;
